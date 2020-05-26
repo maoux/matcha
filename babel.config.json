@@ -1,0 +1,24 @@
+{
+	"presets": [[
+		"@babel/env",
+		{
+			"targets": {
+				"edge": "17",
+				"firefox": "41",
+				"chrome": "46",
+				"safari": "11.1"
+			},
+			"useBuiltIns": "usage",
+			"corejs": "3"
+		}
+	],
+	[
+		"@babel/preset-react",
+		{}
+	]],
+	"plugins": [
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-transform-async-to-generator"
+    ]
+}
