@@ -2,7 +2,7 @@ import React from 'react'
 
 const App = () => {
 	let test = () => {
-		fetch('/api/test', {
+		fetch('/test', {
 			method: 'GET',
 			headers: {
 				"Content-Type": "application/json",

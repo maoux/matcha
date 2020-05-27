@@ -7,21 +7,21 @@ module.exports = {
     devtool: 'source-map',
     entry: "./src/index.js",
     output: {
-        path: path.join(__dirname, "/dist"),
+        path: path.join(__dirname, "/build/dist"),
         filename: "index_bundle.js"
     },
     devServer: {
         port: 8080,
         historyApiFallback: true,
         inline: true,
-        proxy: {
-            '/api/*': {
+        proxy: [{
+                context: ['/api/*', '/*'],
                 target: 'http://localhost:4242',
                 pathRewrite: {'^/api' : ''},
                 secure: false,
                 changeOrigin: true
-            }
-        }
+            }]
+        
     },
     module: {
         rules: [{
